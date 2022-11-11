@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foms Beauty</title>
+    <style>
+        div{
+            /* display:flex; */
+            width:100%;
+            margin:auto;
+            text-align:center;
+            background-color:darksalmon;
+            height:100vh;
+            color:white;
+            /* align-content:center; */
+        }
+        img{
+            /* text-align:center; */
+          width:20%;
+          margin-top:100px;
+          border-radius: 50%;
+        }
+        h1{
+            font-size:50px;
+            margin-top:40px;
+            color:aqua;
+        }
+        h5{
+            margin-top:30px;
+           font-size:35px;
+           color:white;
+        }
+        button{
+            width:10%;
+            padding:3px 8px;
+            font-size:30px;
+            color:white;
+            background-color: rgb(131, 131, 245);
+        }
+        button>a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+</html>
+<script>
+       function display(){
+       let imagelogo=document.createElement("img");
+        imagelogo.setAttribute("src","https://drive.google.com/uc?id=1YDoHFC534PPcghfN3PcID5oq9LaiqwDt");
+        document.querySelector("div").append(imagelogo);} 
+       display();
+      
+       setTimeout(function(){display1();},2000)
+       function display1(){
+        let first=document.createElement("h1");
+        first.innerText="Welcome To Foms Beauty!";
+        document.querySelector("div").append(first);}
+
+        setTimeout(function(){display2();},3000)
+        function display2(){
+            let second=document.createElement("h5");
+            second.innerText="Click on start to shopping."; 
+            document.querySelector("div").append(second);
+        }
+
+        setTimeout(function(){display3();},4000)
+        function display3(){
+            let btn=document.createElement("button");
+            // btn.innerText="start";
+            btn.innerHTML="<a href=homepage.html>Start</a>";
+            document.querySelector("div").append(btn);
+        }
+
+        
+        
+
+
+
+</script>

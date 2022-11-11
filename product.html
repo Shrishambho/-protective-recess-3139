@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows:auto;
+            gap:20px;
+            margin-top:15px;
+        }
+        .container>div{
+            
+            text-align:center;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            padding-bottom:5px;
+            
+        }
+        .container>div>img
+        {
+            
+            width:100%;
+        }
+        .nav{
+            display:flex;
+            height:50px;
+            background-color: black;
+            color:white;
+            justify-content: space-around;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <input type="text" placeholder="Enter text" onInput="search()"/>
+        <h3>Sort By Price</h3>
+        <select id="select1" onChange="handleSort()">
+            <option>LTH</option>
+            <option>HTL</option>
+        </select>
+        <h3>Sort By Category</h3>
+        <select id="select2" onChange="handlesort1()">
+            <option>Electronics</option>
+            <option >Beauty</option>
+            <option >Sports</option>
+            <option >Health</option>
+            <option >Kids</option>
+            <option >Automotive</option>
+            <option >Movies</option>
+            <option >Garden</option>
+            <option >Clothing</option>
+            <option >jewelery</option>
+         </select>
+        <h3 onclick="shree()"><a href="cart.html">Cart</a></h3>
+    </div>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    let cartItems=JSON.parse(localStorage.getItem("cartproduct"))||[];
+    let bag=[];
+    let url="https://636a8495c07d8f936da079e1.mockapi.io/products"
+    fetch(url)
+    .then((res)=>res.json())
+    .then((data)=>{
+        bag=data;
+        displaycard(data)
+    })
+     console.log(bag)
+    function search(){
+        let x=document.querySelector("input").value;
+
+        let newdata=bag.filter((elem)=>{
+            return elem.title.toLowerCase().includes(x.toLowerCase());
+        })
+        displaycard(newdata)
+    }
+
+    function handleSort(){
+        let select=document.querySelector("#select1").value;
+        if(select=="HTL")
+        {
+            bag.sort((a,b)=>b.price-a.price);
+        }
+        if(select=="LTH")
+        {
+            bag.sort((a,b)=>a.price-b.price)
+        }
+        displaycard(bag);
+    }
+
+    function handlesort1(){
+        let z=document.querySelector("#select2").value;
+        console.log(z)
+        let sortdata=bag.filter((elem)=>{
+            return elem.category.toLowerCase()==z.toLowerCase();
+        })
+            
+        
+        displaycard(sortdata)
+     }
+
+    function displaycard(data){
+        document.querySelector(".container").innerHTML="";
+        data.forEach((elem)=>{
+            let div=document.createElement("div")
+
+            let imgproduct=document.createElement("img");
+            imgproduct.setAttribute("src",elem.image);
+
+            let  title=document.createElement("h2");
+            title.innerText=elem.title;
+
+            let  category=document.createElement("h2");
+            category.innerText=elem.category;
+
+            
+            let  description=document.createElement("p");
+            description.innerText=elem.description;
+
+            let  price=document.createElement("p");
+            price.innerText=("Price: "+elem.price);
+
+            let btn=document.createElement("button");
+            btn.innerText="Add To Cart"
+             
+            let flag=false;
+            btn.addEventListener("click",function(){
+               for(let i=0;i<=cartItems.length-1;i++){
+                if(cartItems[i].id==elem.id)
+                {
+                    flag=true;
+                }
+               
+               }
+               if(flag==true)
+               {
+                alert("present")
+               }
+               else{
+                    cartItems.push(elem)
+                localStorage.setItem("cartproduct",JSON.stringify(cartItems));
+                
+
+                }
+                
+            })
+
+
+
+
+
+            div.append(imgproduct,title,category,description,price,btn);
+
+            document.querySelector(".container").append(div);
+        })
+    }
+    
+</script>
