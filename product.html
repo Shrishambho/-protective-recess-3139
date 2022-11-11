@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows:auto;
+            gap:20px;
+            margin-top:30px;
+        }
+        .container>div{
+            
+            text-align:center;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            padding-bottom:5px;
+            
+        }
+        .container>div>img
+        {
+            
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    let bag=[];
+    let url="https://636a8495c07d8f936da079e1.mockapi.io/products"
+    fetch(url)
+    .then((res)=>res.json())
+    .then((data)=>{
+        bag=data;
+        displaycard(data)
+    })
+
+    function displaycard(data){
+        data.forEach((elem)=>{
+            let div=document.createElement("div")
+
+            let imgproduct=document.createElement("img");
+            imgproduct.setAttribute("src",elem.image);
+
+            let  title=document.createElement("h2");
+            title.innerText=elem.title;
+
+            let  category=document.createElement("h2");
+            category.innerText=elem.category;
+
+            
+            let  description=document.createElement("p");
+            description.innerText=elem.description;
+
+            let  price=document.createElement("p");
+            price.innerText=elem.price;
+
+            let btn=document.createElement("button");
+            btn.innerText="Add To Cart"
+
+
+
+
+
+            div.append(imgproduct,title,category,description,price,btn);
+
+            document.querySelector(".container").append(div);
+        })
+    }
+    
+</script>

@@ -6,54 +6,335 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #m1{
+        #container{
+            width:100%;
+            padding:0px;
+            margin:0px;
+        }
+        .m1{
             height:50px;
             background-color:#bad9f4;
-            align-content:center;
-            width:100%;
-            margin:auto;
             text-align:center;
+            padding-top:5px;
         }
-        #m1>p{
-            margin:auto;
-            font-size:15px;
-            padding-top:15px;
-        }
-        #m2{
-            /* display:flex;
+        .m2{
+            display:flex;
             margin:auto;
             margin-left:50px;
             height:50px;
-            justify-content:space-between; */
+            justify-content:space-evenly;
+            width:100%;
+            padding-top:5px;
+        }
+        .m2>div:nth-child(2)
+        {
+         margin-top:30px;  
+        }
+        .m2>div:nth-child(3)
+        {
+            display:flex;
+        }
+        
+        .m2>div:nth-child(4){
+            display:flex;
+        }
+        .m2>div:nth-child(5){
+            display:flex;
+        }
+        .m2>div:nth-child(6){
+            display:flex;
             
         }
-        #m3{
-            /* display:flex; */
-            margin:auto;
-            margin-top:20px;
-            
+        .m2>div:nth-child(6)>img:nth-child(1){
+            margin-top:10px;
+        }
+        .m2>div:nth-child(6)>img:nth-child(2){
+            margin-top:10px;
         }
 
+        .m3{
+            height:60px;
+            background-color: black;
+            color:white;
+            margin-top:20px;
+            display:flex;
+            justify-content: space-evenly;
+            font-size:20px;
+        }
+        .m4{
+            background-color:#ccc;
+            height:50px;
+            width:100%;
+            margin-bottom:0px;
+            text-align:center;
+            padding-top:1px;
+            line-height: 7px;
+        }
+        .m5{
+            display:grid;
+            width:100%;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap:5px;
+            margin-top:5px;
+            line-height: 5px;
+        }
+        .m5>div{
+            margin:0px;
+        }
+        .m5>div>div>img{
+            width:100%;
+            
+        }
+        .m5>div:nth-child(1)>div:nth-child(2)
+        {   
+            padding:5px 0px 5px 15px;
+            background-color:#5794eb;
+            height:80px;
+        }
+        .m5>div:nth-child(2)>div:nth-child(2)
+        {   padding:5px 0px 5px 15px;
+            background-color:#bda96c;
+            height:80px;
+        }
+        .m5>div:nth-child(3)>div:nth-child(2)
+        {   padding:5px 0px 5px 15px;
+            background-color:#008049ee;
+            height:80px;
+           
+        }
+        .m5>div:nth-child(3)>div:nth-child(2)>p{
+            font-size:10px;
+        }
+        .m5>div:nth-child(4)>div:nth-child(2)
+        {   padding:5px 0px 5px 15px;
+            background-color:#58dca3ee;
+            height:80px;
+        }
+
+        .part2{
+            margin:30px 0px 0px 30px;
+        
+        }
+        .part2>h2{
+            margin-left:80px
+        }
+        .part2>div{
+            margin:auto;
+            display:grid;
+            width:90%;
+            gap:10px;
+            grid-template-columns: repeat(6,1fr);
+           
+        }
+        .part2>div>div{
+          
+            padding:10px 10px 0px 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .part2>div>div>img{
+            width:100%;
+        }
+        .part2>div>div>p{
+            margin-top:0px;
+        }
+
+        .part3{
+            margin:30px 0px 0px 30px;
+        
+        }
+        .part3>h2{
+            margin-left:80px
+        }
+        .part3>div{
+            margin:auto;
+            display:grid;
+            width:90%;
+            gap:10px;
+            grid-template-columns: repeat(6,1fr);
+        }
+        .part3>div>div{
+          
+          padding:10px 10px 0px 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .part3>div>div>img{
+          width:100%;
+      }
+      .part3>div>div>p{
+          margin-top:0px;
+          background-color:black ;
+          color:white;
+          font-size: 10px;
+      }
+
+        
+        
+
+        
+        
+        
     </style>
 </head>
 <body>
-    <div id="m1">
-        <p>Get FREE shipping on all orders when you join Beauty Insider.Exclusions/terms apply.<strong>LEARN MORE</strong></p>
-    </div>
-    <div id="m2">
-        
-        <h3><b>F O M S<br>B E A U T Y</b></h3>
-        
-        <input placeholder="Search">
-       
-        <div id="m3"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAA2AEADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAIFAwQGAQf/xAA2EAABAwIEAwMICwAAAAAAAAACAAEDBAURElKREyFRBmGyFTEzNTZ0lNMWIiMkMkFCYnFzwv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD7fkDQOyZA0DspIgjkDQOyZA0DspIgjkDQOyZA0DspIgjkDQOyZA0DspIgIiICou0V1qqCqo4KVm+2EyIuFxHbLh+WcevVXq5+/UAXC922Iyys0Uz45BLRqZ0Gj5cumt/gG+enly6a3+Ab56lWW600UzQ1NcwSOObK1JG74deQdyw01PY6mSOOC4sRSPlD7oDYv0xcEG5bL3XTXampKjAo5mPF3p2jdsGx5O0hYrplzIWiO3doLWccmZy4reiAf0ftZl0yAiIgKrrPaG3f0zf4Voqy42d66tiqhuNbTHEDgIwODNz87/WF3xflsg8g9o673WDxSKspfUVo98HxEtr6Nnxzna+3ZpTFhImOJsWbHBvR977rGHZUQiiiG9XZo4izgPEiwF+v4O90G5cfXlp/mbwK1VPFYiCtp6qW73Gc4HdxGUosr4tg7PgDedXCAiIgIiICIiAiIg//2Q==" alt="">
-        <p>Stores & Services<br><h6>Choose Your Store</h6></p>
-       </div>
+    <div id="container">
+        <div class="m1">
+            <p>Get FREE shipping on all orders when you join Beauty Insider.Exclusions/terms apply.<strong>LEARN MORE</strong></p>
+        </div>
 
-       <div id="m4">
-        <img src="https://uc?id=community.sephora.com/" alt="">
-       </div>
+        <!-- Nav bar -->
+        <div class="m2">
+            <div><h3><b>F O M S<br>B E A U T Y</b></h3></div>
+            <div><input placeholder="Search"></div>
+            <div>
+            <div><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAA2AEADASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAIFAwQGAQf/xAA2EAABAwIEAwMICwAAAAAAAAACAAEDBAURElKREyFRBmGyFTEzNTZ0lNMWIiMkMkFCYnFzwv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD7fkDQOyZA0DspIgjkDQOyZA0DspIgjkDQOyZA0DspIgjkDQOyZA0DspIgIiICou0V1qqCqo4KVm+2EyIuFxHbLh+WcevVXq5+/UAXC922Iyys0Uz45BLRqZ0Gj5cumt/gG+enly6a3+Ab56lWW600UzQ1NcwSOObK1JG74deQdyw01PY6mSOOC4sRSPlD7oDYv0xcEG5bL3XTXampKjAo5mPF3p2jdsGx5O0hYrplzIWiO3doLWccmZy4reiAf0ftZl0yAiIgKrrPaG3f0zf4Voqy42d66tiqhuNbTHEDgIwODNz87/WF3xflsg8g9o673WDxSKspfUVo98HxEtr6Nnxzna+3ZpTFhImOJsWbHBvR977rGHZUQiiiG9XZo4izgPEiwF+v4O90G5cfXlp/mbwK1VPFYiCtp6qW73Gc4HdxGUosr4tg7PgDedXCAiIgIiICIiAiIg//2Q==" alt=""></div>
+            <div><p><b>Stores&Services</b><br>Choose your store</p></div>
+            </div>
+            <div>
+                <div><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABAADYDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAQFBgIDB//EAC0QAAEEAQMCBAQHAAAAAAAAAAEAAgMRBAUSIRNBFCIxMgcjcYEVJFFhYpKh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/xAAaEQEBAQADAQAAAAAAAAAAAAAAAQIRIoEy/9oADAMBAAIRAxEAPwD7iiIgIienqgIuWvY/2Oa76G10gIiICIiCI2DJOdNJNkNfilrelCGUWOF2b73wo4iyczS5MPU3wRZczHAiB1gDmiL5PFWo+sS5Lcp46mZHGIQcfwse7fJZsO4P8aBocn7QJIC7Mc3IdgNypZopTkGcdSGttsA9exAo15vrYWGlaa/EzTky42PjktMQjxRYeSQS93HHt4Haz+qulQYU2ac+EPdlGZ0rxkxyR1ExlGi01Xrtqibs3+1+gharq2BpEDZ9Ty4saJ7tjXSOoF1E1/hRZz4jaJqGr4eGdMxosmSKR26KVwaKI93PcVX3RXjOLO2+PLU6u58459kbBERQpnsrT9SnkyZHxsfIZPkvGS4bY91bQ2qaS2/NybK9mY8rIuk3QMIR1W3qtqv6q7RBmfwvUY4XuxMeOGdsn5c+KPy2UDtPHmbe7jsCtMiICIiAiIgIiICIiAiIg//Z" alt=""></div>
+                <div><p>Community</p></div>
+            </div>
+            <div>
+                <div><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABAACoDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAQCAwUH/8QAKBAAAgICAAQHAAMBAAAAAAAAAQIAAwQREyExUQUSQVNhcZIUIoGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/APt3Bq9tPyI4NXtp+RNxLtTIxwavbT8iODV7afkTcRtMjHBq9tPyI4NXtp+RNxG0yERIsktlZX8RGZakUNeynRO+ig+m9HfxrvIrdviOHU5ra9WdTpkrBcr9gb1OmPlUZIJx7q7PL18rA6++01UlVKimlErVRyRRoAfUg4mN4jlZFdRNWVitpLlHP/O43sEdNiB6cSfCvbIoDWKFtUlLFHQMOR18eo+CJRATzqrkxr/FLbyQqMtp0CSE4a+g+VaejJMuiwWrlYwDWqvlesnQtTtvuPT7PfcCVca7OtfLuvvxanUIlVbKCU67J0SCSfQ9NSV8TJxnwqnfG2typjrTUVZUB2xJ36qDv0nHNxvDbqlpvykx6lba42anKs9l2QdfRI7cpXjAeYnBZsrIZfJ/JddVVL2XWhr4XmeWz6wLfD9nIz26qcj+v+IgP/QZbOWLQmNQlKEkL1LdWJ5kn5J2Z1gIiICIiAiIgf/Z" alt=""></div>
+              <div><p id="sign"><b><a href="sign.html">Sign In</a></b><br>for Free Shipping</p></div>  
+         </div>
+         <div>
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABAAC4DASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUCAwQH/8QALBAAAQMDAgQDCQAAAAAAAAAAAQACAwQFERIhEyIxcQYVoiMyQVFhY5GS8P/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD3FERAREQEREBTLvXzwywUNuYySvqdRZxPciY3GqR2NyBkDA6kgbbkU1GGY/GL+I7ae3NEIPzZI7Xj94/4IAstU7nlvtyM/XUwxtaD9GaMY757rK3VlXBXeV3VzJJiwyU9SxukTsBwQW/B7cjIGxByMbgV1HvB13qxxRnEgnkmI+22JzXep7PygsIiIC4rpborjCxrnvhmhfxIJ4zzxPwRkZ26Egg7EEgrtRBH0+I2+zElrkGMcdzZGnvwwSPUFqFouhuVBVT3aKZlNI972mkDXODmFpa1wds3JB3BPKN1dRAREQEREBERAREQf//Z" alt="">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABAACoDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAIEBQMGB//EACkQAAEDAwIGAgIDAAAAAAAAAAECAwQABRESIQYxQVFSkRMUImEjMkL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A+36E+KfVNCfFPqpUoI6E+KfVNCfFPqpUoI6E+KfVNCfFPqpUoFY0q5TpFxct9mZZKmMfZkyCdDZIyEhI3UrGCdwACN98Vs1h21wQeILjCkDQqY4JUZZGzg0JSpIPkkpBx2IxnBwHGTeLvanUM3C3Cb850RnoOQFOdEuJV/Qc/wAskbHODgHo89xNHj/aMa3SSkalw2FLSvHUIWrZSuwISD3Fb1VLrcY1pgOzZq9DLY6AlSidglIG5JOAANyTQSts5i5wGJsRRLL6AtOpOCP0QeRHIjoRVmsfhKG/BsEZqW38UhanH3Gtv41OOKcKNtttWNu1bFAqldra1dInwuLW04lWtl9vAWysclJPcejyOxq7Sg8/G4hRAS5E4kdajTY7esu40tyUA41t/vJAKNyCQNwQTG3Q5F6mtXi7sLYZZJVAgubFvp8rg8yOQ/yD35br0dh8tl9ltwtq1IK0g6T3HY11oFKUoFKUoFKUoFKUoP/Z" alt="">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABAAEADASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAUGBwIE/8QAKRAAAQQCAQQBAgcAAAAAAAAAAQACAwQFERIGEyExURUiQUJTVGGW0v/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDuKIiAiIgIiICIiAiIgIigyZG9l7UlfASRRVoCWzZCWPuNLx47cbdjlr8zt6HobO+IXkUrF5V8tl2OyUba+Sjby4A/ZOz9SMn2Pke2k6P4E1UBERAREQZvqzJ5Chax0VKRscVoyRu1SdZe54aHNAa1zfHEPJP8BSocjmoImRQSyxxMAaxjOm5QGgegAJfCudZ0Zb2Dca0fcsV5Y542cS7lxcOQ0CCdsLhoHztZbtR/tpP6/d/2g+yTJZlz2Syyyl0RJY93TcpLPGiQe748LTdMXLWQwFK7dLDNYj7m2RlgLSSW/aSSDx1sb97WGu0n3KslSpVkM1jULT9Gtw8OR4l3Nz+LeIJOz8LpUMTYYWRRjTGNDWj4A8IPaIiAiIgIiICIiAiIg//Z" alt="">
+         </div>
+        </div>
 
+        <!-- 3rd div -->
+        <div class="m3">
+            <p>New</p>
+            <p>Brands</p>
+            <p>Makeup</p>
+            <p>Skincare</p>
+            <p>Hair</p>
+            <p>Fragrance</p>
+            <p>Tools & Brushes</p>
+            <p>Bath & Body</p>
+            <p>Mini Size</p>
+            <p>Gifts</p>
+            <p>Beauty under $20</p>
+            <p>Sale & Offers</p>
+        </div>
+
+        <!-- 4 div -->
+        <div class="m4">
+            <h3>Shipping is delayed due to high demand. Need it sooner?Buy Online,Pick Up In Store or get Same-Day Delivery.</h3>
+        </div>
+
+        <!-- img=4 -->
+        <div class="m5">
+            <div>
+                <div>
+                   <img src="https://www.sephora.com/contentimages/2022-fragrance-q4-site-home-page-rwd-hero-banner-holiday-value-sets-75-under-us-01..jpg?imwidth=545">
+                </div>
+                <div>
+                    <h3>Fragrance Gifts $75 & Under<br></h3>
+                    <p>Sets for everyone on your list(including you!)</p>
+                    <h4>SHOP NOW</h4>
+                </div>
+            </div>
+            <div>
+                <div><img src="https://www.sephora.com/contentimages/2022-11-29-stock-up-on-dior-site-desktop-mweb-home-page-rwd-hero-banner-1000x750-en-us-can.jpg?imwidth=545" alt=""></div>
+                <div>
+                    <h3>Best of Dior<br></h3>
+                    <p>Luxe beauty for everyone on your list</p>
+                    <h4>SHOP NOW</h4>
+                </div>
+            </div>
+            <div>
+                <div><img src="https://www.sephora.com/contentimages/2022-holiday-launch-general-site-desktop-home-page-hero-banner-rwd-v1-product-us-release-1000x750.jpg?imwidth=545" alt=""></div>
+                <div><h3>Value Sets?Obsessed!<br></h3>
+                    <p>Limited edition and packed full of products-fun to give,even better to get.</p>
+                    <h4>SHOP NOW</h4></div>
+            </div>
+            <div>
+                <div><img src="https://www.sephora.com/contentimages/2022-10-29-slotting-just-arrived-v2-standard-site-responsive-home-page-hero-banner-4-product-US-CA-handoff_01.jpg?imwidth=545" alt=""></div>
+                <div><h3>In with the New<br></h3>
+                    <p>The latest beauty,from the hottest brands.</p>
+                    <h4>SHOP NOW</h4></div>
+            </div>
+        </div>
+
+        <div class="part2">
+            <h2>Chosen For You</h2>
+            <div>
+                <div>
+                     <img src="https://www.sephora.com/productimages/sku/s2617744-main-zoom.jpg?imwidth=166">
+                     <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                    </div>
+                <div>
+                    <img src="https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <img src="https://www.sephora.com/productimages/sku/s2333771-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <img src="https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <img src="https://www.sephora.com/productimages/sku/s2594364-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <img src="https://www.sephora.com/productimages/sku/s2596039-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="part3">
+            <h2>Just Dropped</h2>
+            <div>
+                <div>
+                    <p>NEW</p>
+                    <p>LIMITED EDITION</p>
+                    <img src="https://www.sephora.com/productimages/sku/s2614840-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <p>NEW</p>
+                    <p>LIMITED EDITION</p>
+                    <img src="https://www.sephora.com/productimages/sku/s2587319-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <p>NEW</p>
+                    <p>LIMITED EDITION</p>
+                    <img src="https://www.sephora.com/productimages/sku/s2610723-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <p>NEW</p>
+                    <p>LIMITED EDITION</p>
+                    <img src="https://www.sephora.com/productimages/sku/s2579902-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <p>NEW</p>
+                    <p>LIMITED EDITION</p>
+                    <img src="https://www.sephora.com/productimages/sku/s2622660-main-zoom.jpg?imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+                <div>
+                    <p>NEW</p>
+                    
+                    <img src="https://www.sephora.com/productimages/sku/s2333771-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166" alt="">
+                    <h5>HUDA BEAUTY<br>Empowerd Eyeshadow<br>Palette</h5>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
+<script>
+    document.querySelector("#sign").addEventListener("click");
+</script>

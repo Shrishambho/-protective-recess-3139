@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:100%;
+            margin:auto;
+            text-align:center;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            height:100vh;
+            color:white;
+        }
+        #sign{
+            display:flex;
+            width:50%;
+            margin:auto;
+           
+            justify-content: space-evenly;
+            
+        }
+        #sign>div{
+            width:40%;
+        }
+        #sign>div{
+            padding:20px;
+            height: 300px;
+            color:black;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        #sign>form>input{
+            margin-top:10px;
+        }
+        #btn{
+            width:20%;
+            text-align:center;
+            margin:auto;
+            margin-top:50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        #btn>button{
+            padding:5px 8px 5px 8px;
+            font-size:30px;
+            background-color: aqua;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <div id="sign">
+        <div>
+            <h2>Create Account Here</h2>
+            <form id="form">
+                <input placeholder="Name" type="text" id="name">
+                <input placeholder="Phone Number" type="number" id="phone">
+                <input placeholder="Email" type="email" id="email">
+                <br>
+                <select id="gender" style="width:65%">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <br>
+                <input placeholder="Username" type="text" id="username">
+                <input placeholder="password" type="text" id="password">
+                 <br><button id="inp">Submit</button>
+                       
+            </form>
+        </div>
+        <div>
+            <h2>Login Here</h2>
+            <form id="form1">
+                <input placeholder="Username" type="text" id="username">
+                <input placeholder="password" type="text" id="password">
+                 <br><button id="login">Submit</button>
+            </form>
+        </div>
+      </div>
+      <div id="btn"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    let signUp=JSON.parse(localStorage.getItem("details"))||[]; 
+
+     form=document.querySelector("#form")
+    document.querySelector("#inp").addEventListener("click",shree);
+   
+    function shree(e){
+        e.preventDefault();
+        let obj={
+        name:form.name.value,
+        email:form.email.value,
+        phone:form.phone.value,
+        gender:form.gender.value,
+        username:form.username.value,
+        password:form.password.value,
+        }
+        if(obj.name==""||obj.email==""||obj.phone==""||obj.gender==""||obj.username==""||obj.password=="")
+        {
+            alert("Please fill all the fields");
+        }
+       else
+       {
+        signUp.push(obj);
+
+        localStorage.setItem("details",JSON.stringify(signUp));
+       }
+    }
+
+   document.querySelector("#login").addEventListener("click",log);
+   
+   form1=document.querySelector("#form1")
+
+   function log(l){
+    l.preventDefault();
+   
+    let obj1={
+        name:form1.username.value,
+        pass:form1.password.value
+    }
+    let flag=false;
+    signUp.forEach((elem)=>{
+    if(obj1.name==elem.username)
+    {
+        if(obj1.pass==elem.password)
+        {
+            flag=true;
+        }
+    }
+       
+    })
+    if(flag==true)
+    {displaybtn()
+       
+    }
+    else{
+        alert("Incorrect username or password")
+    }
+   
+}
+function displaybtn(){
+    btn=document.createElement("button");
+    btn.innerHTML="<a href=product.html>Continue</a>"
+    document.querySelector("#btn").append(btn)
+    
+}
+</script>
