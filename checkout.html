@@ -5,12 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkout</title>
+    <style>
+        .container{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height:100vh;
+            padding-top:1px;
+            margin:auto;
+            text-align: center;
+        }
+        .container>div{
+            width:20%;
+            height:300px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin:auto;
+            margin-top:50px;
+            text-align: center;
+            padding: 10px;
+            line-height: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <h2>Enter Your details.</h2>
        <div>
-        <form>
-            
+        <form id="form">
+            <p>Enter Full Name</p>
+            <input type="text" placeholder="Enter Name">
+            <p>Enter Adress</p>
+            <input type="text" placeholder="Enter Landmark">
+            <p>Enter village/Town</p>
+            <input type="text" placeholder="village/town">
+            <p>Enter District</p>
+            <input type="text" placeholder="District">
+            <p>Enter Pincode</p>
+            <input type="number" placeholder="Enter PIN">
+            <button>Submi</button>
         </form>
        </div>
 
@@ -20,4 +50,8 @@
 <script>
     let cost=JSON.parse(localStorage.getItem("cartcost"));
     console.log(cost[cost.length-1]);
+
+    let form=document.querySelector("#form")
+
+
 </script>
