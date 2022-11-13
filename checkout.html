@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    
+    <style>
+        .conatiner{
+            width:100%;
+            text-align: center;
+            margin:0px;
+            padding:0px;
+            height:100vh;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        #head{
+            padding-top:1px;
+            text-align: center;
+            height:75px;
+            width:100%;
+            color: crimson;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        #check{
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            padding:1px 0px 0px 100px;
+            height:100vh;
+            width:100%;
+            display:flex;
+            justify-content: space-evenly;
+            margin:auto;
+        }
+        #check>div:nth-child(1){
+            width:30%;
+        }
+        #check>div:nth-child(1)>form{
+            text-align: left;
+        }
+        #check>div:nth-child(1)>form>input{
+            width:250px;
+            height:30px;
+        }
+        #check>div:nth-child(1)>form>button{
+            margin-top:30px;
+            text-align: center;
+            padding:5px 10px 5px 10px;
+            background-color: black;
+            color:white;
+        }
+        #check>div:nth-child(3){
+            width:30%;
+            height:500px;
+            text-align: center;
+            border:1px solid black;
+            padding:10px;
+           
+            margin-top:50px;
+        
+        }
+        #place{
+            padding-top: 5px;
+            font-size: 20px;
+            line-height:5px;
+            text-align: left;
+            margin-top:10px;
+          
+        }
+        #check>div:nth-child(2){
+            /* border:1px solid red; */
+            width:20%;
+            height:400px;
+            margin-top:150px;
+            text-align:center;
+            line-height:30px;
+        }
+        #check>div:nth-child(2)>button{
+            width:100px;
+            background-color: black;
+            color:white;
+        }
+        #check>div:nth-child(3)>button{
+            width:100px;
+            height:50px;
+            background-color: red;
+            color:white;
+            font-size:15px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div id="head">
+        <h1>FOMS BEAUTY</h1>
+     </div>
+     <div id="check">
+        <div><h1>Checkout</h1>
+            <hr>
+            <h3>Shipping Address</h3>
+            <form id="form">
+                <p>Enter Full Name</p>
+                <input type="text" placeholder="Enter Name" id="name">
+                <p>Enter Adress</p>
+                <input type="text" placeholder="Enter Landmark" id="landmark">
+                <p>Enter village/Town</p>
+                <input type="text" placeholder="village/town" id="town">
+                <p>Enter District</p>
+                <input type="text" placeholder="District" id="district">
+                <p>Enter Pincode</p>
+                <input type="number" placeholder="Enter PIN" id="pin">
+                <br>
+                <p>Select payment Option</p>
+                <select name="Payment Option" id="pay" onchange="shri()">
+                    <option>Online payment</option>
+                    <option>Cash on Delivery</option>
+                </select>
+                <br>
+                <button>Save and Continue</button>
+                
+            </form>
+        </div>
+        <div id="payment"></div>
+        <div id="place">
+        </div>
+        
+     </div>
+      
+    </div>
+</body>
+</html>
+<script>
+    let obj1={};
+    let cost=JSON.parse(localStorage.getItem("cartcost"))||[];
+    console.log(cost[cost.length-1]);
+    
+    let tot=document.createElement("p");
+    tot=tot.innerText=("Merchandise Subtotal: "+"Rs."+cost[cost.length-1]);
+    
+    let shi=document.createElement("p");
+    shi.innerText=("Shipping & Handling: "+"Rs."+"0.00");
+
+    let tax=document.createElement("p");
+    tax.innerText=("Estimated Tax: "+"Rs."+"0.00");
+
+    let hor=document.createElement("hr");
+
+    let tot1=document.createElement("p");
+    tot1.innerText=("Total cost: "+cost[cost.length-1])
+
+
+    document.querySelector("#place").append(tot,shi,tax,hor,tot1);
+
+    document.querySelector("#form>button").addEventListener("click",shree);
+    let form=document.querySelector("#form");
+    function shree(e){
+        e.preventDefault();
+        let obj={
+            name:form.name.value,
+            landmark:form.landmark.value,
+            town:form.town.value,
+            district:form.district.value,
+            pincode:form.pin.value,
+            option:form.pay.value,
+        }
+        let flag1=false;
+        if(obj.name==""||obj.landmark==""||obj.town==""||obj.district==""||obj.pincode=="")
+        {
+            alert("Please fill all filed");
+        }
+        else{
+            obj1=obj;
+           flag1=true;
+        }
+        if(flag1==true){
+
+         let l1=document.createElement("hr");
+
+         let para=document.createElement("p");
+         para.innerText=("Address: Name- "+obj.name+",");
+
+         let para1=document.createElement("p");
+         para1.innerText=(obj.landmark+","+obj.town+",");
+
+         let para2=document.createElement("p");
+         para2.innerText=(obj.district+","+obj.pincode+",");
+
+         let para4=document.createElement("p");
+         para4.innerText=("Pin-code"+obj.pincode+"Rs."+cost[cost.length-1])
+
+         let para3=document.createElement("h4");
+         para3.innerText=("Mode of payemnt is "+obj.option+".");
+
+         btn3=document.createElement("button");
+         btn3.innerText="Place your order";
+
+         btn3.addEventListener("click",function(){
+            alert("Your Order Has been placed");
+         })
+
+         document.querySelector("#place").append(l1,para,para1,para4,para3,btn3);
+
+        }
+       
+    }console.log(obj1)
+      
+    function shri(){
+        let flag=false;
+        let x=document.querySelector("#pay").value;
+        if(x=="Online payment")
+        {
+            flag=true;
+        }
+        
+        if(flag==true)
+        {
+            display();
+        }
+    }
+    function display(){
+        let num=document.createElement("h3");
+        num.innerText="Enter card Number";
+
+        let y=document.createElement("input");
+
+        let hr=document.createElement("hr");
+
+        let z=document.createElement("h3");
+        z.innerText="Enter Date"
+
+        let date=document.createElement("input");
+
+        let hr1=document.querySelector("hr");
+
+        let cv=document.createElement("h3");
+        cv.innerText="Enter cvv";
+
+        let cvv=document.createElement("input");
+        
+        let hr3=document.createElement("hr");
+
+        let btn=document.createElement("button");
+        btn.innerText="Submit"
+        
+        document.querySelector("#check>div:nth-child(2)").style="border:1px solid red"
+      
+        document.querySelector("#payment").append(num,y,hr,z,date,hr1,cv,cvv,hr3,btn);
+
+    }
+
+    
+
+     
+</script>
